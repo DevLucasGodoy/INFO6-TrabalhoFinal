@@ -1,4 +1,4 @@
-let cacheName = "noticias-app";
+let cacheName = "projeto-final";
 let filesToCache = ["/", "./index.html", "./css/style.css", "./js/main.js", "./pages/fallback.html", "./pages/produtos.html"];
 
 self.addEventListener("install", (e) => {
@@ -14,7 +14,7 @@ self.addEventListener("fetch", (e) => {
     const url = new URL(req.url);
     if(url.origin === location.origin) {
         e.respondWith(cacheFirst(req));
-      }else {
+      }else{
         e.respondWith(networkFirst(req));
       }
 });
